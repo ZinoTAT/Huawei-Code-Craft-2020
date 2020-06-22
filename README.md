@@ -26,7 +26,7 @@
 
 ### 第二代思路
 
-第二代的思路是找到所有环并把节点数小于8，大于2的环输出。于是通过stackoverflow上的[Finding all cycles in a directed graph](https://stackoverflow.com/questions/546655/finding-all-cycles-in-a-directed-graph)提问，找到了这篇1975年DONALD B. JOHNSON的有向图找环的论文[FINDING ALL THE ELEMENTARY CIRCUITS OF A DIRECTED GRAPH]([https://www.cs.tufts.edu/comp/150GA/homeworks/hw1/Johnson%2075.PDF](https://www.cs.tufts.edu/comp/150GA/homeworks/hw1/Johnson 75.PDF))，在确定其为state-of-the-art之后用c++实现了出来并用在了这次的比赛里，结果速度实在太慢，比以深度为7对有向图做深度优先搜索的朴素方法还要慢，原因是输入的图中有很多深度超多7的路径，访问这些路径消耗的时间太多，而JOHNSON的找环中的剪枝方法的正确性是只有在遍历所有路径的前提下才能保证的，因此并不贴合这次比赛的数据和需求。
+第二代的思路是找到所有环并把节点数小于8，大于2的环输出。于是通过stackoverflow上的[Finding all cycles in a directed graph](https://stackoverflow.com/questions/546655/finding-all-cycles-in-a-directed-graph)提问，找到了这篇1975年DONALD B. JOHNSON的有向图找环的论文[FINDING ALL THE ELEMENTARY CIRCUITS OF A DIRECTED GRAPH](https://www.cs.tufts.edu/comp/150GA/homeworks/hw1/Johnson 75.PDF)，在确定其为state-of-the-art之后用c++实现了出来并用在了这次的比赛里，结果速度实在太慢，比以深度为7对有向图做深度优先搜索的朴素方法还要慢，原因是输入的图中有很多深度超多7的路径，访问这些路径消耗的时间太多，而JOHNSON的找环中的剪枝方法的正确性是只有在遍历所有路径的前提下才能保证的，因此并不贴合这次比赛的数据和需求。
 
 ### 最终版思路
 
